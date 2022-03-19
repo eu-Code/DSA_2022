@@ -10,7 +10,7 @@ class Linear{
 		      	FileWriter myWriter = new FileWriter("linear.csv");
 		      	myWriter.write("n,time\n");
 		      	// varying the size of n
-			for(n=1000;n<1000000000;n*=2){
+			for(int n=1000;n<1000000000;n*=2){
 				long sum =0;	
 				// logging time elapsed for different size of n
 				long start_time = System.nanoTime();
