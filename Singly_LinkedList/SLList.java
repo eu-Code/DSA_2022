@@ -95,9 +95,24 @@ class SLList{
 	 * 	3. Deleting head from a list with more than one node
 	 */
 	public void deleteHead(){
-		if(!isEmpty()){
-			if(this.head == this.tail) this.head = this.tail = null;
-			else this.head = this.head.next;
+		if(this.head == this.tail) this.head = this.tail = null;
+		else this.head = this.head.next;
+	}
+	/*
+	 * Deleting the tail of a given linked list
+	 * while deleting the tail of a linked list
+	 * we are required to consider the following three cases
+	 * 	1. Deleting the tail of an empty list
+	 * 	2. Deleting the tail of a list with only one node
+	 * 	3. Deleting the tail of a list with more than one node
+	 */
+	public void deleteTail(){
+		if(this.head == this.tail) this.head = this.tail = null;
+		else{
+			Node temp = this.head;
+			for(; temp.next!=this.tail; temp = temp.next);
+			temp.next = null;
+			this.tail = temp;
 		}
 	}
 }	
