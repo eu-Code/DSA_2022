@@ -6,6 +6,7 @@
  *	3. Testing adding a node to the tail of the list
  *	4. Testing printing the whole list
  *	5. Testing for search method
+ *	6  Testing delete head method
  */
 class TestSLList{
 	public static void main(String[] args){
@@ -25,5 +26,9 @@ class TestSLList{
 		/* Testing search method */
 		System.out.println("Is 6 in the list: "+ linkedList.search(6));
 		System.out.println("Is 9 in the list: "+ linkedList.search(9));
+		/* Testing deleteHead method */
+		linkedList.deleteHead();
+		System.out.println("Printing the list after its head got deleted");
+		linkedList.printList();	
 	}
 }

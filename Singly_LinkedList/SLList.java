@@ -86,4 +86,18 @@ class SLList{
 		 */
 		return false;
 	}
+	/*
+	 * Deleting the head of a given list
+	 * While deleting the head of a linked list
+	 * we are required to conside the following three cases
+	 * 	1. Deletint head from an empty list
+	 * 	2. Deleting head from a list of only one node
+	 * 	3. Deleting head from a list with more than one node
+	 */
+	public void deleteHead(){
+		if(!isEmpty()){
+			if(this.head == this.tail) this.head = this.tail = null;
+			else this.head = this.head.next;
+		}
+	}
 }	
