@@ -115,4 +115,30 @@ class SLList{
 			this.tail = temp;
 		}
 	}
+	/*
+	 * Deleting a node from any where in the list
+	 * While deleting a node from any where in the list
+	 * We are required to consider the following five cases
+	 * 	1. Deleting from an empty list
+	 * 	2. Deleting a node from a list of one node
+	 * 	3. Deleting a node from the head of a list
+	 * 	4. Deleting a node from the tail of a list
+	 * 	5. Deleting a node from a list with more than two nodes
+	 */
+	public void delete(int info){
+		if(!isEmpty()){
+			if(this.head == this.tail) this.head = this.tail =null;
+			else if(this.head.info == info) this.head = this.head.next;
+			else {
+				Node pred = this.head;
+				Node temp = this.head.next;
+				for(;temp!=null & temp.info!=info; temp=temp.next, pred=pred.next);
+				if(temp!=null){
+					pred.next = temp.next;
+					if(temp==this.tail) this.tail = pred;
+				}
+			}
+
+		}
+	}
 }	

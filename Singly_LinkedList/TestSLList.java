@@ -8,6 +8,7 @@
  *	5. Testing for search method
  *	6  Testing delete head method
  *	7. Testing delte from tail method
+ *	8. Testing delete from anywhere
  */
 class TestSLList{
 	public static void main(String[] args){
@@ -20,6 +21,7 @@ class TestSLList{
 		linkedList.addToHead(4);
 		linkedList.addToTail(7);
 		linkedList.addToHead(9);
+		linkedList.addToHead(11);
 		/* Checking if the list is still empty */ 
 		System.out.println("Is our list still empty "+linkedList.isEmpty());
 		/* Printing the list */
@@ -34,6 +36,10 @@ class TestSLList{
 		/* Testing deleteTail method */
 		linkedList.deleteTail();
 		System.out.println("Printing the list after its tail got deleted");
+		linkedList.printList();
+		/* Testing delete method */
+		linkedList.delete(4);
+		System.out.println("Printing the list after a node with info of 4 got deleted");
 		linkedList.printList();	
 	}
 }
