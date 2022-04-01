@@ -9,9 +9,9 @@ class Test{
 		DoublyLinkedList list = new DoublyLinkedList();
 		/* check if the list lis empty or not */
 		System.out.println("Is the list empty: "+list.isEmpty());
-		/* adding a node to the head of the list */
-		System.out.println("Adding a node with info of 6 to the head of the list");
-		list.addToHead(6);	
+		/* adding a node to the tail of the list */
+		System.out.println("Adding a node with info of 5 to the tail of our doubly linked list");
+		list.addToTail(5);		
 		/* checking if the list is still empty */
 		System.out.println("Is the list still empty: "+list.isEmpty());
 	}
