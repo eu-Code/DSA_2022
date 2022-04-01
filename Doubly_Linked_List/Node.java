@@ -16,9 +16,9 @@ class Node{
 		this.next = next;
 		this.prev = prev;
 	}
-
-	/* Define a constructor with only info as a param */
+	
+	/* Define a constructor with only info as a parameter */
 	public Node(int info){
 		this(info, null, null);
 	}
-}
+}	
