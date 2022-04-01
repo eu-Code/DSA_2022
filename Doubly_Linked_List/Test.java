@@ -6,6 +6,7 @@
  * 	4. Testing printList method
  * 	5. Testing search method
  * 	6. Testing deleteHead method
+ * 	7. Testing deleteTail method
  */
 class Test{
 	public static void main(String [] args){
@@ -21,12 +22,9 @@ class Test{
 		list.addToTail(9);
 		/* printing the whole list */
 		list.printList();
-		/* search a node with info of 12 */
-		System.out.println("Is a node with info of 12 in the list: "+list.search(12));
-		/* search a node with info of 9 */
-		System.out.println("Is a node with info of 9 in the list: "+list.search(9));
-		/* deleting head of the list */
-		list.deleteHead();	
+		System.out.println("Deleting the tail of our list");
+		/* deleting tail of the list */
+		list.deleteTail();
 		list.printList();
 	}
 }
