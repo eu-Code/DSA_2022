@@ -7,6 +7,7 @@
  *	5. a method to search for a node based on info
  *	6. a method to delete a node from the head of doubly linked list
  *	7. a method to delete a node from the tail of doubly linked list
+ *	8. a method to delete a node from anywhere in a doubly linked list
  */
 class DoublyLinkedList{
 	/* Declare head and tail nodes */
@@ -172,6 +173,41 @@ class DoublyLinkedList{
 			}
 		}
 
+	}
+
+	/*
+	 * Deleting a node from anywhere in the list
+	 * 	if the list is empty do nothing
+	 *
+	 * 	else if the list is not empty
+	 * 		if the list got only one node
+	 * 			set both head and tail to null
+	 * 		else if the required node is at the head
+	 * 			delete from head
+	 * 		else 
+	 * 			traverse until we reach the node
+	 * 				if we found the node at the tail: use delete from tail
+	 * 				else connect the prev of the node with the next of the node
+	 */
+	public void delete(int info){
+		/* if the list is not empty */
+		if(!isEmpty()){
+			if(this.head == this.tail && info==this.head.info) this.tail = this.head = null;
+			else if(this.head.info == info) this.deleteHead();
+			else{
+				Node temp = this.head;
+				for(;temp!=null&temp.info!=info; temp = temp.next);
+
+				if(temp!=null){
+					if(temp==this.tail) this.deleteTail();
+					else{
+						temp.prev.next = temp.next;
+						temp.next.prev = temp.prev;
+					}
+				}
+			}
+		}
+			
 	}
 
 }

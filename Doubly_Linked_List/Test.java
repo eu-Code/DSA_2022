@@ -7,6 +7,7 @@
  * 	5. Testing search method
  * 	6. Testing deleteHead method
  * 	7. Testing deleteTail method
+ * 	8. Testing delete method
  */
 class Test{
 	public static void main(String [] args){
@@ -22,9 +23,9 @@ class Test{
 		list.addToTail(9);
 		/* printing the whole list */
 		list.printList();
-		System.out.println("Deleting the tail of our list");
-		/* deleting tail of the list */
-		list.deleteTail();
+		/* Deleting a node from anywhere in the list */
+		System.out.println("Deleting a node with info of 5");
+		list.delete(6);
 		list.printList();
 	}
 }
