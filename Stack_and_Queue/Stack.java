@@ -76,7 +76,7 @@ class Stack{
 		if(!this.isEmpty()){
 			this.top = this.top.next;
 			this.items-=1;
-			return false;
+			return true;
 		}
 		return false;
 	}
