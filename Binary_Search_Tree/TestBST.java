@@ -14,5 +14,8 @@ class TestBST{
 		System.out.println("Is the BST still empty: "+bst.isEmpty());
 		// inserting a node to a non-empty BST
 		bst.insert(4);
+		// searching for a node
+		if(bst.search(8)!=null) System.out.println("We found a node.");
+		else System.out.println("Oops, the node that you are looking for is not in this BST");
 	}
 }

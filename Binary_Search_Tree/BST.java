@@ -2,6 +2,7 @@
  * Binary search tree impelementation
  * 	1. Checking if a given BST is empty or not
  * 	2. Inserting a node to a binary search tree
+ * 	3. Searching for a node in a binary search tree
  */
 public class BST{
 	/*
@@ -60,6 +61,18 @@ public class BST{
 			if(parent.key<key) parent.right = node;
 			else parent.left = node;
 		}
+	}
+	/*
+	 * Searching for a node in a binary search tree
+	 */
+	public BSTNode search(int key){
+		BSTNode temp = this.root;
+		while(temp!=null){
+			if(temp.key==key) return temp;
+			else if(temp.key<key) temp = temp.right;
+			else temp = temp.left;
+		}
+		return null;
 	}
 
 }
