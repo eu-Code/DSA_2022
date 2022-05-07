@@ -20,46 +20,45 @@ public class BST{
 	public boolean isEmpty(){
 		return this.root == null;
 	}
-	
 	/*
 	 * Inserting a node to a binary search tree
-	 * 	1. Inserting a node to an empty BST
-	 * 		- create an new leaf node and assing it as root node.
-	 * 	2. Inserting a node to a non-empty BST
+	 * 	1. Inserting a node to an empty binary search tree
+	 * 		- create a new leaf node and assign it as a root
+	 * 	2. Inserting a node to a non-empty binary search tree
 	 * 		- create a new leaf node
-	 * 		- find a right location/parent for a newly created leaf node
-	 * 		- attach newly created leaf node to its parent
+	 * 		- find the right parent for a newly created leaf node(we are requred to traverse through the tree starting from its root)
+	 * 		- attach the newly created leaf node to its parent
 	 */
 	public void insert(int key){
 		/*
-		 * inserting a node to an empty BST
+		 * Inserting a node to an empty binary search tree
 		 */
-		if(this.root==null){
+		if(this.root == null){
 			this.root = new BSTNode(key);
 		}
 		/*
-		 * Inserting a node to a non-empty BST
+		 * Inserting a node to a non-empty binary search tree
 		 */
 		else{
 			/*
-			 * Creating a new leaf node
+			 * Create a new leaf node
 			 */
 			BSTNode node = new BSTNode(key);
 			/*
-			 * Finding a right parent for the newly created leaf node
+			 * Find the right parent for newly created leaf node
 			 */
-			BSTNode p = root;
-			BSTNode prev = null;
-			while(p!=null){
-				prev = p;
-				if(p.key<key) p = p.right;
-				else p = p.left;
+			BSTNode temp = root;
+			BSTNode parent = null;
+			while(temp!=null){
+				parent = temp;
+				if(temp.key<key) temp = temp.right;
+				else temp = temp.left;
 			}
 			/*
-			 * Attaching a newly created node to its parent
+			 * Attach the newly created leaf node to its parent
 			 */
-			if(prev.key<key) prev.right = node;
-			else prev.left  = node;
+			if(parent.key<key) parent.right = node;
+			else parent.left = node;
 		}
 	}
 
