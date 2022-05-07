@@ -14,8 +14,18 @@ class TestBST{
 		System.out.println("Is the BST still empty: "+bst.isEmpty());
 		// inserting a node to a non-empty BST
 		bst.insert(4);
+		bst.insert(3);
+		bst.insert(9);
 		// searching for a node
 		if(bst.search(8)!=null) System.out.println("We found a node.");
 		else System.out.println("Oops, the node that you are looking for is not in this BST");
+		System.out.println("Preorder depth first traversal");
+		bst.preorder(bst.root);
+		// inorder depth first traversal
+		System.out.println("Inorder depth first traversal");
+		bst.inorder(bst.root);
+		// postorder depth first traversal
+		System.out.println("Postorder depth frist traversl");
+		bst.postorder(bst.root);
 	}
 }

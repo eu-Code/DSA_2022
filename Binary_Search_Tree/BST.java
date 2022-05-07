@@ -3,12 +3,15 @@
  * 	1. Checking if a given BST is empty or not
  * 	2. Inserting a node to a binary search tree
  * 	3. Searching for a node in a binary search tree
+ * 	4. preorder depth first traversal
+ * 	4. inorder depth first traversal
+ * 	5. postorder depth first traversl
  */
 public class BST{
 	/*
 	 * Definging the only attribute of a binary search tree which is the root node
 	 */
-	private BSTNode root;
+	public BSTNode root;
 	/*
 	 * Defining a constructor and set root node to null
 	 */
@@ -73,6 +76,42 @@ public class BST{
 			else temp = temp.left;
 		}
 		return null;
+	}
+	/*
+	 * A visit method
+	 */
+	public void visit(BSTNode node){
+		System.out.println(node.key);
+	}
+	/*
+	 * preorder depth first traversing 
+	 */
+	public void preorder(BSTNode node){
+		if(node!=null){
+			visit(node);
+			preorder(node.left);
+			preorder(node.right);
+		}
+	}
+	/*
+	 * inorder depth first traversing 
+	 */
+	public void inorder(BSTNode node){
+		if(node!=null){
+			inorder(node.left);
+			visit(node);
+			inorder(node.right);
+		}
+	}
+	/*
+	 * post order depth first traversing
+	 */
+	public void postorder(BSTNode node){
+		if(node!=null){
+			postorder(node.left);
+			postorder(node.right);
+			visit(node);
+		}
 	}
 
 }
