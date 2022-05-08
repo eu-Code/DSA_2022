@@ -4,8 +4,9 @@
  * 	2. Inserting a node to a binary search tree
  * 	3. Searching for a node in a binary search tree
  * 	4. preorder depth first traversal
- * 	4. inorder depth first traversal
- * 	5. postorder depth first traversl
+ * 	5. inorder depth first traversal
+ * 	6. postorder depth first traversal
+ * 	7. breadth first traversal
  */
 public class BST{
 	/*
@@ -111,6 +112,21 @@ public class BST{
 			postorder(node.left);
 			postorder(node.right);
 			visit(node);
+		}
+	}
+	/*
+	 * Breadth first traversal
+	 */
+	public void bft(BSTNode node){
+		Queue queue = new Queue();
+		if(node!=null){
+			queue.enqueue(node);
+			while(!queue.isEmpty()){
+				BSTNode temp = queue.dequeue();
+				this.visit(temp);
+				if(temp.left!=null) queue.enqueue(temp.left);
+				if(temp.right!=null) queue.enqueue(temp.right);
+			}
 		}
 	}
 

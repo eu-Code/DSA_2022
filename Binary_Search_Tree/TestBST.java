@@ -2,6 +2,11 @@
  * Testing basic Binary Search Tree oprations
  * 	1. Testing isEmpty
  * 	2. Testing insert
+ * 	3. Testing search
+ * 	4. Testing preorder depth first traversing
+ * 	5. Testing inorder depth first traversing
+ * 	6. Testing postorder depth first traversing
+ * 	7. Testing breadth first traversal
  */
 class TestBST{
 	public static void main(String[] args){
@@ -27,5 +32,8 @@ class TestBST{
 		// postorder depth first traversal
 		System.out.println("Postorder depth frist traversl");
 		bst.postorder(bst.root);
+		// breadth first traversing
+		System.out.println("Breadth first traversing from left to right");
+		bst.bft(bst.root);
 	}
 }

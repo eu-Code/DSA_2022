@@ -17,7 +17,7 @@ class Queue{
 		return this.items;
 	}
 	
-	public boolean enqueue(int info){
+	public boolean enqueue(BSTNode info){
 		Node node = new Node(info);
 		if(this.isEmpty()){
 			this.front = this.rare = node;
@@ -30,17 +30,18 @@ class Queue{
 		return true;
 	}
 	
-	public boolean dequeue(){
+	public BSTNode dequeue(){
 		if(!this.isEmpty()){
+			BSTNode node = this.front.info;
 			this.front = this.front.next;
 			this.items-=1;
-			return true;
+			return node;
 		}
-		return false;
+		return null;
 	}
 	
-	public int topEl(){
+	public BSTNode topEl(){
 		if(!this.isEmpty()) return this.front.info;
-		return -1;
+		return null;
 	}
 }
